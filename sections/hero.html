@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeTutor - Connect Students & Tutors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+
+<body class="bg-light">
+
+    <main>
+        <!-- Hero & Slideshow Section -->
+        <section id="hero" class="hero-section position-relative overflow-hidden bg-dark text-white py-5">
+            <div class="container py-4">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h1 class="display-4 fw-bold mb-3">Find Expert Home Tutors Nearby</h1>
+                        <p class="lead text-light mb-4">Empowering students through tailored 1-on-1 tutoring sessions at
+                            home or online.</p>
+                        <div class="d-flex gap-3">
+                            <a href="signup.html" class="btn btn-warning btn-lg px-4 fw-bold" id="hero-signup">Get
+                                Started</a>
+                            <a href="#services" class="btn btn-outline-light btn-lg px-4">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="slideshow-container rounded-4 overflow-hidden shadow-lg border border-secondary">
+                            <img src="Images/home1.webp" class="mySlides w-100 img-fluid" alt="Home tutoring session">
+                            <img src="Images/home3.webp" class="mySlides w-100 img-fluid" alt="Student learning">
+                            <img src="Images/home2.webp" class="mySlides w-100 img-fluid" alt="Tutor assisting student">
+                            <img src="Images/home4.webp" class="mySlides w-100 img-fluid" alt="Online class demo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                const slides = document.getElementsByClassName("mySlides");
+                if (!slides.length) return;
+
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1; }
+                slides[slideIndex - 1].style.display = "block";
+
+                setTimeout(showSlides, 3500);
+            }
+        </script>
+</body>
+
+</html>
