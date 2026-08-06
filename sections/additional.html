@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional Information Page</title>
+    
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --modal-duration: 0.3s;
+        }
+
+        body {
+            justify-content: center;
+            font-family: 'Lato', sans-serif;
+            min-height: 100vh;
+            height: 100%;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.4);
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            color: #000;
+            display: none;
+            z-index: 1050;
+        }
+
+        .modal-overlay.show {
+            display: block;
+        }
+
+        .modal-box {
+            background-color: #27221f;
+            position: absolute;
+            border-radius: 7px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            width: 900px;
+            height: auto;
+            animation: modalopen var(--modal-duration) ease-out;
+        }
+
+        @keyframes modalopen {
+            from { opacity: 0; transform: translate(-50%, -60%); }
+            to { opacity: 1; transform: translate(-50%, -50%); }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-dark bg-dark p-2" style="width: 100%;">
+        <h2 class="text-danger m-0">Additional Infos</h2>
+        <div>
+            <button class="btn btn-lg btn-success m-1 fw-lighter fs-5" id="signup">Teach</button>
+            <button class="btn btn-lg btn-danger m-1 fw-lighter fs-5" id="open">Study</button>
+        </div>
+    </nav>
+
+    <!-- Teacher Modal -->
+    <div class="modal-overlay" id="contents">
+        <div class="modal-box bg-secondary text-light">
+            <div class="bg-dark p-2 modal-header d-flex justify-content-between align-items-center">
+                <h3 class="text-light fw-bold m-0 fs-4">Teacher Registration</h3>
+                <button class="btn btn-dark p-1 btn-sm" id="close">
+                    <i class="fa fa-close fs-5"></i>
+                </button>
+            </div>
+            <div class="p-3">
+                <p class="fw-lighter m-0 fs-5 mb-3 text-warning">If you don't want to teach, please close this form.</p>
+                <form id="teachers">
+                    <div class="mb-3 text-start">
+                        <label for="education" class="fs-5 fw-lighter form-label">Education Level</label>
+                        <select class="fs-6 p-2 form-select" id="education" required>
+                            <option value="" disabled selected>Select your degree</option>
+                            <option value="bsc">BS</option>
+                            <option value="msc">MS</option>
+                            <option value="graduated">Graduated</option>
+                            <option value="learning">Still Learning</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3 text-start">
+                        <label for="expert" class="fs-5 fw-lighter form-label">Expertise</label>
+                        <input type="text" id="expert" class="form-control fs-6 p-2"
+                            placeholder="Please enter your field of expertise" required />
+                    </div>
+
+                    <div class="mb-3 text-start">
+                        <label for="passwords" class="fs-5 fw-lighter form-label">Password</label>
+                        <input type="password" id="passwords" class="form-control fs-6 p-2"
+                            placeholder="Please enter your password" required />
+                    </div>
+
+                    <div class="mt-4">
+                        <button type="submit" class="btn btn-dark fw-bold fs-5 px-4 py-2">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Student Modal -->
+    <div class="modal-overlay" id="containerTwo">
+        <div class="modal-box bg-secondary text-light">
+            <div class="bg-dark p-2 modal-header d-flex justify-content-between align-items-center">
+                <h3 class="text-light fw-bold m-0 fs-4">Student Registration</h3>
+                <button class="btn btn-dark p-1 btn-sm" id="closebtn">
+                    <i class="fa fa-close fs-5"></i>
+                </button>
+            </div>
+            <div class="p-3">
+                <p class="fw-lighter m-0 fs-5 mb-3 text-warning">If you don't want to study, please close this form.</p>
+                <form id="students">
+                    <div class="mb-3 text-start">
+                        <label for="subject" class="fs-5 fw-lighter form-label">Subject</label>
+                        <input type="text" id="subject" class="form-control fs-6 p-2"
+                            placeholder="Please enter the subject you want to study" required />
+                    </div>
+
+                    <div class="mb-3 text-start">
+                        <label for="time" class="fs-5 fw-lighter form-label">Preferred Study Time</label>
+                        <input type="time" id="time" class="form-control fs-6 p-2" required />
+                    </div>
+
+                    <div class="mb-3 text-start">
+                        <label for="password" class="fs-5 fw-lighter form-label">Password</label>
+                        <input type="password" id="password" class="form-control fs-6 p-2"
+                            placeholder="Please enter your password" required />
+                    </div>
+
+                    <div class="mt-4">
+                        <button type="submit" class="btn btn-dark fw-bold fs-5 px-4 py-2">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Modal Element References
+        const signupBtn = document.getElementById('signup');
+        const openBtn = document.getElementById('open');
+        const closeTeacherBtn = document.getElementById('close');
+        const closeStudentBtn = document.getElementById('closebtn');
+
+        const teacherModal = document.getElementById('contents');
+        const studentModal = document.getElementById('containerTwo');
+
+        // Form References
+        const teachersForm = document.getElementById('teachers');
+        const studentsForm = document.getElementById('students');
+
+        // Toggle Modals
+        signupBtn.addEventListener('click', () => teacherModal.classList.add('show'));
+        closeTeacherBtn.addEventListener('click', () => teacherModal.classList.remove('show'));
+
+        openBtn.addEventListener('click', () => studentModal.classList.add('show'));
+        closeStudentBtn.addEventListener('click', () => studentModal.classList.remove('show'));
+
+        // Close on Backdrop Click
+        window.addEventListener('click', (e) => {
+            if (e.target === teacherModal) teacherModal.classList.remove('show');
+            if (e.target === studentModal) studentModal.classList.remove('show');
+        });
+
+        // Form Submit: Teacher
+        teachersForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const educationVal = document.getElementById('education').value;
+            const expertVal = document.getElementById('expert').value;
+
+            localStorage.setItem("education", educationVal);
+            localStorage.setItem("expert", expertVal);
+            
+            alert("Congratulations! Your teacher registration is complete.");
+            window.location.href = "profile.html";
+        });
+
+        // Form Submit: Student
+        studentsForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const timeVal = document.getElementById('time').value;
+            const subjectVal = document.getElementById('subject').value;
+
+            localStorage.setItem("time", timeVal);
+            localStorage.setItem("subject", subjectVal);
+
+            alert("Congratulations! Your student registration is complete.");
+            window.location.href = "profile.html";
+        });
+    </script>
+</body>
+
+</html>
