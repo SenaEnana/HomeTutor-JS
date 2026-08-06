@@ -1,273 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomeTutor - Connect Students & Tutors</title>
-    <!-- Font Awesome 6 (Updated from 4.7) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Bootstrap 5 CSS -->
+    <title>My Modular Website</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleG.css">
 </head>
+<body>
 
-<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <!-- Navbar Code Here -->
+    </nav>
 
-    <!-- Header & Navigation -->
-    <header class="sticky-top shadow-sm">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
-            <div class="container">
-                <a class="navbar-brand d-flex align-items-center fw-bold fs-4 text-warning" href="indexG.html">
-                    <i class="fa-solid fa-graduation-cap me-2"></i>HomeTutor
-                </a>
+    <!-- Containers where separate HTML files will load -->
+    <div id="hero-container"></div>
+    <div id="about-container"></div>
+    <div id="services-container"></div>
+    <div id="contact-container"></div>
 
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto me-4 mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active fs-5" href="indexG.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fs-5" href="about.html">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fs-5" href="services.html">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link fs-5" href="contact.html">Contact Us</a>
-                        </li>
-                    </ul>
-
-                    <!-- Auth State Buttons -->
-                    <div id="register-actions" class="d-flex gap-2">
-                        <button class="btn btn-outline-warning text-white px-4" id="sign">Login</button>
-                        <button class="btn btn-warning fw-semibold px-4" id="signup">Sign Up</button>
-                    </div>
-                    <div id="profiles-actions" class="d-none flex-wrap gap-2">
-                        <!-- Dynamic Profile/Logout buttons inserted here -->
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main>
-        <!-- Hero & Slideshow Section -->
-        <section class="hero-section position-relative overflow-hidden bg-dark text-white py-5">
-            <div class="container py-4">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 mb-4 mb-lg-0">
-                        <h1 class="display-4 fw-bold mb-3">Find Expert Home Tutors Nearby</h1>
-                        <p class="lead text-light mb-4">Empowering students through tailored 1-on-1 tutoring sessions at home or online.</p>
-                        <div class="d-flex gap-3">
-                            <button class="btn btn-warning btn-lg px-4 fw-bold" id="hero-signup">Get Started</button>
-                            <a href="services.html" class="btn btn-outline-light btn-lg px-4">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="slideshow-container rounded-4 overflow-hidden shadow-lg border border-secondary">
-                            <img src="Images/home1.webp" class="mySlides w-100 img-fluid" alt="Home tutoring session">
-                            <img src="Images/home3.webp" class="mySlides w-100 img-fluid" alt="Student learning">
-                            <img src="Images/home2.webp" class="mySlides w-100 img-fluid" alt="Tutor assisting student">
-                            <img src="Images/home4.webp" class="mySlides w-100 img-fluid" alt="Online class demo">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Login Modal Container -->
-    <div class="modal-backdrop-custom d-none" id="containerTwo">
-        <div class="modal-card bg-dark text-white rounded-4 p-4 shadow-lg">
-            <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom border-secondary">
-                <h3 class="fs-4 fw-bold m-0">Welcome Back</h3>
-                <button type="button" class="btn-close btn-close-white" id="closebtn" aria-label="Close"></button>
-            </div>
-            <form id="students">
-                <div class="mb-3">
-                    <label for="emails" class="form-label text-light">Email Address</label>
-                    <input type="email" id="emails" class="form-control form-control-lg bg-secondary text-white border-0" placeholder="name@example.com" required>
-                    <small class="error-msg text-danger"></small>
-                </div>
-                <div class="mb-4">
-                    <label for="passwords" class="form-label text-light">Password</label>
-                    <input type="password" id="passwords" class="form-control form-control-lg bg-secondary text-white border-0" placeholder="••••••••" required>
-                    <small class="error-msg text-danger"></small>
-                </div>
-                <button type="submit" class="btn btn-warning btn-lg w-100 fw-bold rounded-pill">Login</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Sign Up Modal Container -->
-    <div class="modal-backdrop-custom d-none" id="contents">
-        <div class="modal-card bg-dark text-white rounded-4 p-4 shadow-lg">
-            <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom border-secondary">
-                <h3 class="fs-4 fw-bold m-0">Create Account</h3>
-                <button type="button" class="btn-close btn-close-white" id="close" aria-label="Close"></button>
-            </div>
-            <form id="teachers" class="row g-3">
-                <div class="col-12">
-                    <label for="name" class="form-label text-light">Full Name</label>
-                    <input type="text" id="name" class="form-control bg-secondary text-white border-0" placeholder="John Doe" required>
-                    <small class="error-msg text-danger"></small>
-                </div>
-                <div class="col-md-6">
-                    <label for="email" class="form-label text-light">Email</label>
-                    <input type="email" id="email" class="form-control bg-secondary text-white border-0" placeholder="john@example.com" required>
-                    <small class="error-msg text-danger"></small>
-                </div>
-                <div class="col-md-6">
-                    <label for="phoneNo" class="form-label text-light">Phone Number</label>
-                    <input type="tel" id="phoneNo" class="form-control bg-secondary text-white border-0" placeholder="+1234567890" required>
-                    <small class="error-msg text-danger"></small>
-                </div>
-                <div class="col-12">
-                    <label for="address" class="form-label text-light">Address</label>
-                    <input type="text" id="address" class="form-control bg-secondary text-white border-0" placeholder="City, Street address" required>
-                    <small class="error-msg text-danger"></small>
-                </div>
-                <div class="col-md-6">
-                    <label for="password" class="form-label text-light">Password</label>
-                    <input type="password" id="password" class="form-control bg-secondary text-white border-0" placeholder="••••••••" required>
-                    <small class="error-msg text-danger"></small>
-                </div>
-                <div class="col-md-6">
-                    <label for="passwordC" class="form-label text-light">Confirm Password</label>
-                    <input type="password" id="passwordC" class="form-control bg-secondary text-white border-0" placeholder="••••••••" required>
-                    <small class="error-msg text-danger"></small>
-                </div>
-                <div class="col-12 mt-4">
-                    <button type="submit" class="btn btn-warning btn-lg w-100 fw-bold rounded-pill" id="submission">Register</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Application Script -->
     <script>
-        // Hero Slideshow
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            const slides = document.getElementsByClassName("mySlides");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
+        // Simple loader function
+        async function loadSection(elementId, filePath) {
+            try {
+                const response = await fetch(filePath);
+                const html = await response.text();
+                document.getElementById(elementId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading ${filePath}:`, error);
             }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1; }
-            if (slides.length > 0) {
-                slides[slideIndex - 1].style.display = "block";
-            }
-            setTimeout(showSlides, 3500);
         }
 
-        // DOM Elements
-        const signBtn = document.getElementById('sign');
-        const signupBtn = document.getElementById('signup');
-        const heroSignupBtn = document.getElementById('hero-signup');
-        const closeLoginBtn = document.getElementById('closebtn');
-        const closeSignupBtn = document.getElementById('close');
-        const loginModal = document.getElementById('containerTwo');
-        const signupModal = document.getElementById('contents');
-        const registerActions = document.getElementById('register-actions');
-        const profilesActions = document.getElementById('profiles-actions');
-
-        // Modal Handlers
-        const openModal = (modal) => modal.classList.remove('d-none');
-        const closeModal = (modal) => modal.classList.add('d-none');
-
-        signBtn?.addEventListener('click', () => openModal(loginModal));
-        signupBtn?.addEventListener('click', () => openModal(signupModal));
-        heroSignupBtn?.addEventListener('click', () => openModal(signupModal));
-        closeLoginBtn?.addEventListener('click', () => closeModal(loginModal));
-        closeSignupBtn?.addEventListener('click', () => closeModal(signupModal));
-
-        window.addEventListener('click', (e) => {
-            if (e.target === loginModal) closeModal(loginModal);
-            if (e.target === signupModal) closeModal(signupModal);
-        });
-
-        // Form Validation & Storage Helpers
-        function showError(input, message) {
-            const field = input.parentElement;
-            const small = field.querySelector('.error-msg');
-            if (small) small.innerText = message;
-        }
-
-        function clearError(input) {
-            const field = input.parentElement;
-            const small = field.querySelector('.error-msg');
-            if (small) small.innerText = '';
-        }
-
-        // Login Handler
-        document.getElementById('students')?.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const emailVal = document.getElementById('emails').value;
-            const passVal = document.getElementById('passwords').value;
-
-            if (emailVal === localStorage.getItem("email") && passVal === localStorage.getItem("password")) {
-                localStorage.setItem('Are you active', 'true');
-                window.location.href = "additional.html";
-            } else {
-                alert("Invalid email or password!");
-            }
-        });
-
-        // Registration Handler
-        document.getElementById('teachers')?.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const name = document.getElementById('name');
-            const email = document.getElementById('email');
-            const phoneNo = document.getElementById('phoneNo');
-            const address = document.getElementById('address');
-            const password = document.getElementById('password');
-            const passwordC = document.getElementById('passwordC');
-
-            if (password.value !== passwordC.value) {
-                showError(passwordC, 'Passwords do not match');
-                return;
-            }
-
-            localStorage.setItem("name", name.value);
-            localStorage.setItem("email", email.value);
-            localStorage.setItem("phoneNo", phoneNo.value);
-            localStorage.setItem("address", address.value);
-            localStorage.setItem("password", password.value);
-
-            alert("Registration successful! Please login to continue.");
-            closeModal(signupModal);
-            openModal(loginModal);
-        });
-
-        // Authentication State Check
-        const isActive = localStorage.getItem('Are you active');
-        if (isActive === "true") {
-            registerActions.classList.add('d-none');
-            profilesActions.classList.remove('d-none');
-            profilesActions.innerHTML = `
-                <a href="profile.html" class="btn btn-warning fw-semibold">Profile</a>
-                <button id="logoutBtn" class="btn btn-outline-danger">Logout</button>
-            `;
-
-            document.getElementById('logoutBtn')?.addEventListener('click', () => {
-                localStorage.setItem('Are you active', 'false');
-                window.location.reload();
-            });
-        }
+        // Load all sections into index.html
+        loadSection('hero-container', 'sections/hero.html');
+        loadSection('about-container', 'sections/about.html');
+        loadSection('services-container', 'sections/services.html');
+        loadSection('contact-container', 'sections/contact.html');
     </script>
 </body>
-
 </html>
