@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomeTutor - Connect Students & Tutors</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN (Replaces Font Awesome) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
- <header class="sticky-top shadow-sm">
+    <header class="sticky-top shadow-sm">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center fw-bold fs-4 text-warning" href="index.html">
-                    <i class="fa-solid fa-graduation-cap me-2"></i>HomeTutor
+                    <!-- Updated to Bootstrap Icon -->
+                    <i class="bi bi-mortarboard-fill me-2"></i>HomeTutor
                 </a>
 
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
@@ -28,7 +31,7 @@
                             <a class="nav-link active fs-5" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fs-5" href="sections/about.htmll">About Us</a>
+                            <a class="nav-link fs-5" href="sections/about.html">About Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fs-5" href="sections/services.html">Services</a>
@@ -52,6 +55,9 @@
     <div id="about-container"></div>
     <div id="services-container"></div>
     <div id="contact-container"></div>
+
+    <!-- Bootstrap 5 Bundle JS (needed for navbar toggle to work) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
         async function loadSection(elementId, filePath) {
