@@ -62,64 +62,64 @@
         opacity: 1;
         width: 100%;
     }
-
 </style>
 
 <body>
-    <div class="link">
-        <ul>
-            <li> <a class="fw-bold mt-5" href="indexG.html">Home</a></li>
-            <li> <a class="fw-bold mt-3" href="about.html">About Us</a></li>
-            <li> <a class="fw-bold mt-3" href="contact.html">Contact Us</a></li>
-        </ul>
-    </div>
-    <nav class="navbar badge text-wrap m-0 p-3 bg-dark text-centre text-dark" style="width: 100%;">
-        <h1 class="fs-1 text-warning fw-light">Welcome!!!</h1>
-        <h2 class="fs-2 text-white fw-light">This is the service our website give you...</h2>
-        <button class="btn btn-dark float-start toggle" id="toggle">
-            <i class="fa fa-bars fs-4"></i>
-        </button>
-    </nav>
+    <section id="services" class="services-section py-5 bg-dark text-white">
+        <div class="container py-4">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <h2 class="display-5 fw-bold text-white mb-2">Our Services</h2>
+                    <p class="lead text-warning fw-semibold">Connecting Students & Professional Tutors Effortlessly</p>
+                    <div class="mx-auto bg-warning" style="height: 3px; width: 60px;"></div>
+                </div>
+            </div>
 
-    <div class="images">
-        <img src="images/service2.webp" class="image mySlides w3-animate-bottom">
-        <img src="images/service3.webp" class="image mySlides w3-animate-top">
-        <img src="images/service4.webp" class="image mySlides w3-animate-bottom">
-        <img src="images/service.webp" class="image mySlides w3-animate-top">
-        <img src="images/service5.webp" class="image mySlides w3-animate-top">
-    </div>
-    <div>
-        <h2 class="fw-bold text-dark">Do you want to know the services our website give?</h2>
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="card bg-secondary text-white h-100 border-0 shadow-sm p-4 text-center rounded-4">
+                        <div class="mb-3">
+                            <i class="fa-solid fa-user-graduate text-warning display-4"></i>
+                        </div>
+                        <h3 class="fs-4 fw-bold mb-3">Find a Tutor</h3>
+                        <p class="text-light fs-6">
+                            Looking to improve your grades? Easily find verified 1-on-1 home or online tutors tailored
+                            to your subject and schedule.
+                        </p>
+                    </div>
+                </div>
 
-        <p class="fs-5">Our website give easy and simple service without consuming your time.
-            In simple if you want to study you can get a teacher or if you want to teach you can also get job here
-            within
-            short period of time all you have to do is joining our website by login and have an account by Signing Up.
-            Thank You For Using Our Website!!!
-        </p>
-    </div>
-    <script>
-        const toggle = document.getElementById('toggle');
-        //this is the button that shows the link class
-        toggle.addEventListener('click', () => document.body.classList.toggle('show-link'));
+                <div class="col-md-4">
+                    <div class="card bg-secondary text-white h-100 border-0 shadow-sm p-4 text-center rounded-4">
+                        <div class="mb-3">
+                            <i class="fa-solid fa-chalkboard-user text-warning display-4"></i>
+                        </div>
+                        <h3 class="fs-4 fw-bold mb-3">Become a Tutor</h3>
+                        <p class="text-light fs-6">
+                            Want to teach and earn? Sign up as a tutor, showcase your expertise, and connect with
+                            students needing your knowledge.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-secondary text-white h-100 border-0 shadow-sm p-4 text-center rounded-4">
+                        <div class="mb-3">
+                            <i class="fa-solid fa-clock-rotate-left text-warning display-4"></i>
+                        </div>
+                        <h3 class="fs-4 fw-bold mb-3">Fast & Simple</h3>
+                        <p class="text-light fs-6">
+                            Save time with our straightforward process. Create an account in minutes and start
+                            connecting right away.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-        //Below are image styling
-        var indexes = 0;
-        images();
-
-        // function carousel() {
-        function images() {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            indexes++;
-            if (indexes > x.length) { indexes = 1 }
-            x[indexes - 1].style.display = "block";
-            setTimeout(images, 3000);
-        }
-    </script>
+            <div class="text-center">
+                <a href="signup.html" class="btn btn-warning btn-lg px-5 rounded-pill fw-bold">Get Started Now</a>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>
