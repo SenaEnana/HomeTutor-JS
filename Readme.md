@@ -25,3 +25,16 @@ The application relies on these production distributions to supply typography st
 *   **Runtime Logic:** Vanilla ECMAScript (Native DOM manipulation, Fetch API streams, and Client-side Web Storage)
 
 ---
+
+## 📂 Project Structure
+
+```text
+├── index.html          # Shell entry gateway, page shell structure, and master controller
+├── style.css           # Premium dark-theme variables, custom backdrops, and input animations
+└── sections/           # Modular document layout components
+    ├── hero.html       # Hero header element showcasing internal slider systems
+    ├── about.html      # Agency history and business values grid layout
+    ├── services.html   # Functional presentation columns
+    ├── contact.html    # Interactive connection and inquiry submission elements
+    ├── signup.html     # Wide account creation grid and validation script wrapper
+    └── login.html      # Specialized authentication gateway layout structure
