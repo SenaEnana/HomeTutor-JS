@@ -24,33 +24,39 @@ body {
   min-height: 100vh;
 }
 
-/* Modal Overlay Backdrop */
+/* Backdrop Overlay centering the modal structure */
 .modal-backdrop-custom {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(4px);
-  z-index: 1050;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  animation: fadeIn 0.25s ease-out forwards;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1060;
 }
 
-/* Modal Inner Container */
-.modal-card {
-  width: 100%;
-  max-width: 480px;
-  max-height: 90vh;
-  overflow-y: auto;
-  background-color: var(--card-bg) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* Beautiful custom dynamic inputs */
+.custom-input {
+    background: #91959e !important;
+    border: 1px solid rgba(255, 255, 255, 0.315) !important;
+    border-radius: 10px !important;
+    transition: all 0.25s ease-in-out !important;
 }
 
+.custom-input:focus {
+    background: #bec2ca !important;
+    border-color: #ffca28 !important;
+    box-shadow: 0 0 0 4px rgba(255, 201, 40, 0.253) !important;
+    outline: none !important;
+}
+
+/* Typography polish elements */
+.fw-extrabold { font-weight: 800; }
+.tracking-tight { letter-spacing: -0.025em; }
+.tracking-wider { letter-spacing: 0.05em; }
 /* Form Elements & Inputs */
 .form-control:focus {
   box-shadow: 0 0 0 0.25rem rgba(79, 70, 229, 0.25);

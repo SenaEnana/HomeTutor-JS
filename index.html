@@ -27,8 +27,7 @@
                     <i class="bi bi-mortarboard-fill me-2"></i>HomeTutor
                 </a>
 
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav">
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -58,30 +57,73 @@
         </nav>
     </header>
 
+    <!-- App View Shell Slots -->
     <section id="hero-container"></section>
     <section id="about-container"></section>
     <section id="services-container"></section>
     <section id="contact-container"></section>
+    
+    <!-- Modal Injections Target Areas -->
+    <div id="signup-modal-holder"></div>
+    <div id="login-modal-holder"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        // Custom dynamic script evaluator for fetched modules
         async function loadSection(elementId, filePath) {
             try {
                 const response = await fetch(filePath);
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 const html = await response.text();
-                document.getElementById(elementId).innerHTML = html;
+                
+                const targetElement = document.getElementById(elementId);
+                if (targetElement) {
+                    targetElement.innerHTML = html;
+                    
+                    // Manually run any embedded scripts inside the loaded fragment
+                    const scripts = targetElement.querySelectorAll("script");
+                    scripts.forEach(oldScript => {
+                        const newScript = document.createElement("script");
+                        newScript.text = oldScript.text;
+                        oldScript.parentNode.replaceChild(newScript, oldScript);
+                    });
+                }
             } catch (error) {
                 console.error(`Error loading ${filePath}:`, error);
             }
         }
 
         document.addEventListener("DOMContentLoaded", () => {
+            // Load base layouts
             loadSection('hero-container', 'sections/hero.html');
             loadSection('about-container', 'sections/about.html');
             loadSection('services-container', 'sections/services.html');
             loadSection('contact-container', 'sections/contact.html');
+
+            // Load interactive system fragments
+            loadSection('signup-modal-holder', 'sections/signup.html');
+            loadSection('login-modal-holder', 'sections/login.html');
+
+            // Show Signup Modal Click Event Setup
+            document.getElementById('signup')?.addEventListener('click', () => {
+                const modal = document.getElementById('contents');
+                if (modal) {
+                    modal.classList.remove('d-none');
+                } else {
+                    console.error("Signup modal markup structure not loaded into DOM tree yet.");
+                }
+            });
+
+            // Show Login Modal Click Event Setup
+            document.getElementById('sign')?.addEventListener('click', () => {
+                const modal = document.getElementById('containerTwo');
+                if (modal) {
+                    modal.classList.remove('d-none');
+                } else {
+                    console.error("Login modal markup structure not loaded into DOM tree yet.");
+                }
+            });
         });
     </script>
 </body>
