@@ -38,3 +38,24 @@ The application relies on these production distributions to supply typography st
     ├── contact.html    # Interactive connection and inquiry submission elements
     ├── signup.html     # Wide account creation grid and validation script wrapper
     └── login.html      # Specialized authentication gateway layout structure
+```
+
+---
+
+## 🛠️ Installation & Execution Guidelines
+
+Because the application relies explicitly on modern JavaScript asynchronous resource sharing (fetch()) to gather document segments from adjacent directories, client browsers will prevent file rendering if loaded straight out of a local hard drive via filesystem channels (file:///).
+
+To initialize the layout engine cleanly, you must run it over a simulated server route using one of the quick workflows below:
+
+Running Option A: VS Code Live Server Extension (Recommended)
+
+Open your workspace directory root within Visual Studio Code.
+
+Navigate to extensions, search for Live Server by Ritwick Dey, and choose install.
+
+Open index.html, right-click inside the workspace editor screen, and choose Open with Live Server (or use the status bar hotkey button Go Live).
+
+Running Option B: NodeJS Command-Line Tool
+
+If utilizing terminal controls, initialize a fast, server loop instance over the working project directory:
