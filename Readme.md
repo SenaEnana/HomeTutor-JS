@@ -59,3 +59,7 @@ Open index.html, right-click inside the workspace editor screen, and choose Open
 Running Option B: NodeJS Command-Line Tool
 
 If utilizing terminal controls, initialize a fast, server loop instance over the working project directory:
+```bash
+# Serves the current directory path instantly via network proxy loops
+npx http-server .
+```
