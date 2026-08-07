@@ -53,11 +53,9 @@ body {
     outline: none !important;
 }
 
-/* Typography polish elements */
 .fw-extrabold { font-weight: 800; }
 .tracking-tight { letter-spacing: -0.025em; }
 .tracking-wider { letter-spacing: 0.05em; }
-/* Form Elements & Inputs */
 .form-control:focus {
   box-shadow: 0 0 0 0.25rem rgba(79, 70, 229, 0.25);
   border-color: var(--primary-color) !important;
