@@ -83,10 +83,8 @@ async function loadSection(elementId, filePath) {
 2. Sandbox Client State Evaluation Parameters
 
 The core authorization layer monitors explicit state properties inside local client profiles, shifting global tracking variables on session shifts:
-```bash
-Storage Key Identity|          | Value Context Assignment  |      Client UI State Outcome
----
-Are you active|                 |"true"                     |     Strips landing entry buttons; appends direct profile redirection anchors and                                                        |        session logout keys.
----
-Are you active|                | "false" / null              |    Returns page control headers to base configuration containing clean Login and Signup actions.
-```
+
+| Storage Key Identity | Value Context Assignment | Client UI State Outcome |
+| :--- | :--- | :--- |
+| `Are you active` | `"true"` | Strips landing entry buttons; appends direct profile redirection anchors and session logout keys. |
+| `Are you active` | `"false"` / `null` | Returns page control headers to base configuration containing clean Login and Signup actions. |
