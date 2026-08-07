@@ -1,0 +1,33 @@
+<!-- Login Modal Container (Clean Fragment) -->
+<div class="modal-backdrop-custom d-none" id="containerTwo">
+    <div class="modal-card rounded-4 p-5 shadow-lg border border-secondary border-opacity-25" style="background: #11141a; max-width: 500px; width: 90%;">
+        
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom border-secondary border-opacity-25">
+            <div>
+                <h3 class="fs-3 fw-extrabold m-0 text-white tracking-tight">Welcome Back</h3>
+                <p class="text-muted small m-0 mt-1">Sign in to manage your tutor profile or requests</p>
+            </div>
+            <button type="button" class="btn-close btn-close-white p-2 rounded-circle border border-secondary border-opacity-50" id="closebtn" aria-label="Close"></button>
+        </div>
+
+        <!-- Form Layout -->
+        <form id="students">
+            <div class="mb-4">
+                <label for="emails" class="form-label text-secondary fw-semibold small text-uppercase tracking-wider">Email Address</label>
+                <input type="email" id="emails" class="form-control custom-input text-white py-2 px-3" placeholder="name@example.com" required>
+                <small class="error-msg text-danger d-block mt-1"></small>
+            </div>
+            <div class="mb-4">
+                <label for="passwords" class="form-label text-secondary fw-semibold small text-uppercase tracking-wider">Password</label>
+                <input type="password" id="passwords" class="form-control custom-input text-white py-2 px-3" placeholder="••••••••" required>
+                <small class="error-msg text-danger d-block mt-1"></small>
+            </div>
+            <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-warning btn-lg w-100 fw-bold py-3 fs-5 shadow" style="border-radius: 12px; background: linear-gradient(45deg, #ffca28, #ffb300);">
+                    Sign In
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
