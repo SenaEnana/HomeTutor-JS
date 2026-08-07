@@ -71,6 +71,7 @@ npx http-server .
 1. The Dynamic Fragment Streaming Method
 Instead of loading thousands of tags in a single document stream, sections are pulled asynchronously as raw text streams and evaluated directly into target container IDs:
 ```bash
+JavaScript
 async function loadSection(elementId, filePath) {
     const response = await fetch(filePath);
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -79,5 +80,7 @@ async function loadSection(elementId, filePath) {
 }
 ```
 
----
+2. Sandbox Client State Evaluation Parameters
+
+The core authorization layer monitors explicit state properties inside local client profiles, shifting global tracking variables on session shifts:
 
