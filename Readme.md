@@ -70,3 +70,14 @@ npx http-server .
 
 1. The Dynamic Fragment Streaming Method
 Instead of loading thousands of tags in a single document stream, sections are pulled asynchronously as raw text streams and evaluated directly into target container IDs:
+```bash
+async function loadSection(elementId, filePath) {
+    const response = await fetch(filePath);
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    const html = await response.text();
+    document.getElementById(elementId).innerHTML = html;
+}
+```
+
+---
+
