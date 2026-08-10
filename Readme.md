@@ -89,6 +89,6 @@ The core authorization layer monitors explicit state properties inside local cli
 | `Are you active` | `"true"` | Strips landing entry buttons; appends direct profile redirection anchors and session logout keys. |
 | `Are you active` | `"false"` / `null` | Returns page control headers to base configuration containing clean Login and Signup actions. |
 
-# 👨‍💻 Author 
+## 👨‍💻 Author 
 
 Sena Adane
