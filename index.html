@@ -55,14 +55,12 @@
     <section id="services-container"></section>
     <section id="contact-container"></section>
 
-    <!-- Modal Entry Targets -->
     <div id="signup-modal-holder"></div>
     <div id="login-modal-holder"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Hero Dynamic Engine Config
         let slideIndex = 0;
         function showSlides() {
             const slides = document.getElementsByClassName("mySlides");
@@ -73,7 +71,6 @@
             setTimeout(showSlides, 3500);
         }
 
-        // Section Loader Engine
         async function loadSection(elementId, filePath) {
             try {
                 const response = await fetch(filePath);
@@ -86,7 +83,6 @@
         }
 
         document.addEventListener("DOMContentLoaded", async () => {
-            // Load all landing layouts concurrently
             await Promise.all([
                 loadSection('hero-container', 'sections/hero.html'),
                 loadSection('about-container', 'sections/about.html'),
@@ -96,24 +92,19 @@
                 loadSection('login-modal-holder', 'sections/signin.html')
             ]);
 
-            // Initialize background sliders once hero layout components drop in
             showSlides();
 
-            // Bind Event Handlers safely using dynamic delegation
             document.body.addEventListener('click', (e) => {
                 const loginModal = document.getElementById('containerTwo');
                 const signupModal = document.getElementById('contents');
 
-                // Trigger Open Overlays
                 if (e.target.id === 'sign') loginModal?.classList.remove('d-none');
                 if (e.target.id === 'signup' || e.target.id === 'hero-signup') signupModal?.classList.remove('d-none');
 
-                // Trigger Close Elements
                 if (e.target.id === 'closebtn' || e.target === loginModal) loginModal?.classList.add('d-none');
                 if (e.target.id === 'close' || e.target === signupModal) signupModal?.classList.add('d-none');
             });
 
-            // Login Operations Event Hook
             document.body.addEventListener('submit', function (e) {
                 if (e.target.id === 'students') {
                     e.preventDefault();
@@ -129,7 +120,6 @@
                 }
             });
 
-            // Global Account Session Verification Sequence
             const registerActions = document.getElementById('register-actions');
             const profilesActions = document.getElementById('profiles-actions');
             if (localStorage.getItem('Are you active') === "true") {
