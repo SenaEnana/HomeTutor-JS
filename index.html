@@ -101,7 +101,6 @@
                 if (e.target.id === 'sign') loginModal?.classList.remove('d-none');
                 if (e.target.id === 'signup' || e.target.id === 'hero-signup') signupModal?.classList.remove('d-none');
 
-                // Trigger Close Elements
                 if (e.target.id === 'closebtn' || e.target === loginModal) loginModal?.classList.add('d-none');
                 if (e.target.id === 'close' || e.target === signupModal) signupModal?.classList.add('d-none');
             });
