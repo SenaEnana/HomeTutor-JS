@@ -83,7 +83,6 @@
         }
 
         document.addEventListener("DOMContentLoaded", async () => {
-            // Load all landing layouts concurrently
             await Promise.all([
                 loadSection('hero-container', 'sections/hero.html'),
                 loadSection('about-container', 'sections/about.html'),
